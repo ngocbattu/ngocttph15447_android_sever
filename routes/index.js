@@ -53,7 +53,11 @@ router.get('/DanhSach' , function (req , res, next){
   Anh.find({},function (err , data){
     res.render('DanhSach',{data : data});
   });
-
+});
+router.get('/DanhSachAnh' , function (req , res, next){
+  Anh.find({},function (err , data){
+    res.send(data);
+  });
 });
 router.post('/Delete',function (req , res ){
     let ObejectID = require('mongodb').ObjectId;
